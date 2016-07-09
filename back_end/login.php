@@ -1,13 +1,10 @@
 <?php
-use app\Req;
-use app\DB;
 
-// TODO
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $type = $_POST['optionsRadios'];
     $password = $_POST['password'];
-    $db = DB::Open();
+    $db = new PDO('sqlite:../iactive.db');
 
     $sql = "SELECT * FROM user WHERE pw = :password AND type_id = :type";
     $query = $db->prepare($sql);
@@ -23,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $res = 1;
             if ($q_result['type_id'] == 1) {
                 header("Location: http://$sv_host/basicSet.html");
+
             } else {
                 header("Location: http://$sv_host/basicSet.html");
             }
