@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
+<link type="text/css" href="css/AdminLTE.min.css" rel="stylesheet"/>
+<link type="text/css" href="css/_all-skins.min.css" rel="stylesheet"/>
+<link type="text/css" href="css/css.css" rel="stylesheet"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/record.js"></script>
+<script type="text/javascript" src="js/app.min.js"></script>
+<script src=""></script>
+<title>状态控制</title>
+</head>
+<body class="skin-blue sidebar-mini" style="padding:0;margin:0;overflow-y:auto;"> 
+  <div>
+  <div class="col-xs-2">
+	<aside class="main-sidebar ">
+    <section class="sidebar ">
+      <ul class="sidebar-menu ">
+        <li class="header" style="padding-left:20px;"> 录播主机Web管理</li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span> 录播主机设置</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="basicSet.html"><i class="fa fa-circle-o"></i> 基本设置</a></li>
+            <li><a href="storeSet.html"><i class="fa fa-circle-o"></i> 存储设置</a></li>
+			<li><a href="recordSet.html"><i class="fa fa-circle-o"></i> 录播设置</a></li>
+          </ul>
+        </li>
+		
+		 <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span> 录播状态控制</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="statusDis.html"><i class="fa fa-circle-o"></i> 状态显示</a></li>
+            <li><a href="statusCtr.html"><i class="fa fa-circle-o"></i> 状态控制</a></li>
+          </ul>
+        </li>
+		
+		<li class="treeview">
+          <a href="courseMan.html">
+            <i class="fa fa-dashboard"></i><span> 录播课件管理</span><i class="fa fa-angle-left pull-right"></i>
+          </a>
+        </li>
+		
+		<li class="treeview">
+          <a href="courseLive.html">
+            <i class="fa fa-dashboard"></i> <span>课程直播</span><i class="fa fa-angle-left pull-right"></i>
+          </a>
+        </li>
+		
+		<li class="treeview">
+          <a href="courseDem.html">
+            <i class="fa fa-dashboard"></i> <span>课件点播</span><i class="fa fa-angle-left pull-right"></i>
+          </a>
+        </li>
+      </ul>
+     </section>
+   </aside>
+  </div>
+
+  <div class="col-xs-10">
+      <div class="header logout-header">
+	      当前用户:<span>管理员</span>
+		  <button type="">退出</button>
+	 </div>
+    <div class="statusCtr-container">
+	   <div class="row statusCtr-row">
+	     <label>录制 </label>
+	     <button type="button" class="btn btn-default btn-ctr" id="record-btn">开始</button>	
+		  <button type="button" class="btn btn-default btn-ctr" id="sus-btn">暂停</button>	
+		    <button type="button" class="btn btn-default btn-ctr" id="over-btn">中止</button>	
+             <div class="model-min-box recordset-box">  
+	          <form id="record-form">
+	            <div class="form-group">
+                     <label>课件名称
+                      <input type="text" class="form-control" id="planName" name="subject">
+				     </label>
+               </div>
+		       <div class="form-group">
+                     <label>学科
+                      <input type="text" class="form-control" id="subject" name="subject">
+				    </label>
+               </div>
+			   <div class="form-group">
+                    <label>主讲人
+                     <input type="text" class="form-control" id="author" name="subject">
+				   </label>
+              </div>
+			    <div class="form-group">
+                   <label>简介
+                    <input type="text" class="form-control" id="memo" name="memo">
+				   </label>
+              </div>
+			    <button type="button" class="btn btn-default" id="save-btn">保存</button>
+		 	    <button type="reset" class="btn btn-default reset-btn">取消</button>	             				
+		    </form>
+	     </div>
+	  </div>
+	   <div class="row statusCtr-row">
+	     <label>直播 </label>
+	     <button type="button" class="btn btn-default btn-ctr" id="live-btn">开始</button>	
+	  </div>
+	   <div class="row statusCtr-row">
+	     <label>导航 </label>
+	     <button type="button" class="btn btn-default btn-ctr" id="manual-btn">手动</button>	
+		  <button type="button" class="btn btn-default btn-ctr" id="auto-btn" style="margin-left:-40px;background:#599CD8;color:#fff">自动</button>	
+
+	  <div class="dir-box">
+	      <div class="form-group " style="margin-top:20px;">
+		    <label>显示模式
+              <select class="form-control" id="disMode">
+			    <option value="4">4</option>
+                <option  value="2">2</option>
+                <option  value="1">1</option>
+              
+             </select>
+			 </label>
+		  </div> 	
+          <div class="channel-box">
+		     <table class="channel-tab">	
+               			 
+			 </table>
+		  </div>
+	  </div>
+  </div>
+	  <div class="row statusCtr-row">
+	     <label>跟踪</label>
+	     <button type="button" class="btn btn-default btn-ctr" id="track-btn">启用</button>	
+	  </div>
+	   <div class="row statusCtr-row">
+	     <label>交互</label>
+	     <button type="button" class="btn btn-default btn-ctr" id="inter-btn">启用</button>	
+	  
+		     <div class="model-min-box inter-box">  
+	          <form>			  
+			  <table>
+			   <tr> 
+			     <td style="border-right:solid thin #ddd;width:310px;">
+	            <div class="form-group">
+                     <label>MCU地址
+                      <input type="text" class="form-control" id="planName" name="planName">
+				     </label>
+               </div>
+		       <div class="form-group">
+                     <label>用户名
+                      <input type="text" class="form-control" id="subject" name="subject">
+				    </label>
+               </div>
+			   <div class="form-group">
+                    <label>密码
+                     <input type="text" class="form-control" id="author" name="author">
+				   </label>
+              </div>
+			  </td>
+			  <td>
+			     <div class="form-group" style="margin-left:50px;">
+		            <label>会议选择
+                      <select class="form-control" id="meetChs" name="meetChs">
+                         <option>1</option>
+                         <option>2</option>
+                         <option>3</option>
+                         <option>4</option>
+                         <option>5</option>
+                      </select>
+			       </label>
+		        </div> 
+				 <div class="checkbox">
+                   <label>
+                     <input type="checkbox" id="" name="">播放远端声音
+				   </label>
+                </div>
+				<div class="checkbox">
+                   <label>
+                     <input type="checkbox" id="" name="">录制远端音频
+				   </label>
+                </div>
+				<div class="checkbox">
+                   <label>
+                     <input type="checkbox" id="" name="">录制远端视频
+				   </label>
+                </div>
+			  </td>
+			 </tr>
+	       </table>	
+		   <button type="button" class="btn btn-default log-button" id="inter-log">登录</button>
+		      </form>
+	        </div>
+		   <div class="model-min-box inter-obj">  
+		       <table class="inter-tab">
+			      <tr>
+				    <th>- 交互对象 -</th>
+				  </tr>
+				  <tr>
+				    <td> 山沟小学1
+					</td>
+					<td> 山沟小学2
+					</td>
+				  </tr>
+				  <tr>
+				    <td> 山沟小学3
+					</td>
+					<td> 山沟小学4
+					</td>
+				  </tr>				 
+			   <table>	 
+			      <div class="checkbox" style="margin-left:0;">
+                   <label>
+                     <input type="checkbox" id="" name="" >发送辅流
+				   </label>
+                  </div>
+ 			     <button type="button" class="btn btn-default log-button" id="inter-over">中止</button>
+		   </div>
+	    </div> 
+      </div> 
+	</div>
+  </div>
+</body>
+</html>

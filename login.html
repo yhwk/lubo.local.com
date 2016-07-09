@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="css/css.css" rel="stylesheet"/>
+    <title>登录</title>
+</head>
+<style>
+    .h1 {
+        margin-bottom: 20px;
+    }
+
+    .radio {
+        margin-left: 52px;
+    }
+
+    .form-group {
+        margin-top: 30px;
+    }
+
+    .model-box {
+        margin: 100px 0 0 35%
+    }
+</style>
+<body>
+<div class="model-box">
+    <h1>
+        录播主机Web管理
+    </h1>
+    <main>
+        <div style="margin-top:30px">
+            <form role="form" action="back_end/login.php" method="post">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked>管理员
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="2">普通用户
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="password">密码
+                        <input type="text" class="form-control" id="password" placeholder="请输入密码"
+                               style="margin-left:50px;">
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-default" style="margin-left:50px">登录</button>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+</html>
