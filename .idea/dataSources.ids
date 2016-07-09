@@ -176,9 +176,9 @@
       <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
     </table>
     <table name="user" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INT" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="pw" sqlType="INT" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="type" sqlType="INT" precision="0" scale="-1" nullable="false" jdbcType="4" def="Mg=="/>
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="pw" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="type_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4" def="Mg=="/>
       <primary-key columns="id"/>
       <index name="user_id_uindex" unique="true" columns="id"/>
     </table>
