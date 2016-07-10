@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $dem_pw = $_POST['demPassword'];
     $ip = $_POST['ip'];
     $ct_ip = $_POST['centerIp'];
-
+    
     $sql = "INSERT INTO rec_server (SERVER_NAME, MAN_PWD, IP, RES_CENTER_IP)
                              VALUES(:sv_nm, :mng_pw, :ip, :ct_ip) ";
     $db = new PDO('sqlite:../iactive.db');
@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $st1 = $db->query('SELECT * FROM rec_server');
     $all = $st1->fetchAll();
 
-    
+
     print json_encode($all);
 } else {
-
+    echo "method is post";
 }
