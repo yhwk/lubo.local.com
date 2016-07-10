@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1"/>
 <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
 <link type="text/css" href="css/AdminLTE.min.css" rel="stylesheet"/>
 <link type="text/css" href="css/_all-skins.min.css" rel="stylesheet"/>
@@ -10,22 +10,20 @@
 <script type="text/javascript" src="js/record.js"></script>
 <script type="text/javascript" src="js/app.min.js"></script>
 <title>录播课件管理</title>
-
+<style>
+</style>
 </head>
 <body class="skin-blue sidebar-mini" style="padding:0;margin:0;"> 
-  <div>
-  <div class="col-xs-2">
-	 <aside class="main-sidebar ">
-    <section class="sidebar ">
-      <ul class="sidebar-menu ">
-        <li class="header" style="padding-left:20px;"> 录播主机Web管理</li>
+   <aside class="main-sidebar">
+     <section class="sidebar">
+      <ul class="sidebar-menu">
         <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span> 录播主机设置</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="basicSet.html"><i class="fa fa-circle-o"></i> 基本设置</a></li>
-            <li><a href="storeSet.html"><i class="fa fa-circle-o"></i> 存储设置</a></li>
+            <li><a href="storeSet.html"><i class="fa fa-circle-o"></i> 上传设置</a></li>
 			<li><a href="recordSet.html"><i class="fa fa-circle-o"></i> 录播设置</a></li>
           </ul>
         </li>
@@ -60,18 +58,25 @@
       </ul>
      </section>
    </aside>
-  </div>
 
-  <div class="col-xs-10">
-       <div class="header logout-header">
-	      当前用户:<span>管理员</span>
-		  <button type="">退出</button>
-	 </div>
-     <div class="model-box" style="width:900px;margin-top:30px;">
+   <div class="header">
+	    <div class="logo">
+		     <img class="logo-img"/>
+			 <p class="logo-txt"></p>
+	    </div>
+        <div class="header logout-header">	      
+	         <img src="img/user.png" id="custom"/>		
+			当前用户:<span>管理员</span>
+		    <button type="default">退出登录</button>
+	    </div>
+   </div> 
+   
+  <div class="main">
+     <div class="model-box" style="margin-top:30px;">
 	      <form>
 		      <div class="form-group">
                 <label>
-                <input type="text" class="form-control" id="search-input" />
+                <input type="text" class="form-control" id="search-input" style="margin-left:100px;"/>
 				</label>
 				<button  class="btn btn-default btn-search">搜索</button>
               </div>		  
@@ -79,7 +84,7 @@
 	     <table class="courseTab">
 		   <tbody>
 		      <tr>
-			    <th><input type="checkbox"/></th>
+			    <th><input type="checkbox"/>&nbsp;</th>
 				<th>课件名称</th>
 			    <th>主讲人</th>
 				<th>开始时间</th>
@@ -93,11 +98,14 @@
 				<td>隋东亮</th>
 				<td>2016-04-10 10:00:00</td>
 				<td>2016-04-10 10:45:00</td>
-				<td><a id="dem">点播</a></td>
+				<td><a id="dem" href="courseLive.html">点播</a></td>
 				<td><a id="edit">编辑</a></td>
 			  </tr>
 		   </tbody>
 		 </table>
+	  </div>
+	  	<div class="footer">
+	       <p class="footer-txt"></p>
 	  </div>
     </div> 
 	 <div class="model-min-box edit-box">
@@ -105,42 +113,29 @@
 	    <form> 
 		       <div class="form-group">
                      <label>课件名称
-                      <input type="text" class="form-control" id="planName" >
+                      <input type="text" class="form-control" id="planName" name="planName">
 				     </label>
                </div>
 		       <div class="form-group">
                      <label>学科
-                      <input type="text" class="form-control" id="subject" >
+                      <input type="text" class="form-control" id="subject" name="subject">
 				    </label>
                </div>
 			   <div class="form-group">
                     <label>主讲人
-                     <input type="text" class="form-control" id="author" >
+                     <input type="text" class="form-control" id="speaker" name="speaker">
 				   </label>
               </div>
 			    <div class="form-group">
                    <label>简介
-                    <input type="text" class="form-control" id="memo" >
+                    <input type="text" class="form-control" name="memo">
 				   </label>
               </div>
-			     <button type="" class="btn btn-default reset-btn">保存</button>	
-		 	    <button type="reset" class="btn btn-default reset-btn">取消</button>		
+			  <div class="btn-box btn-box-min">
+			     <button type="button" class="btn btn-default save-btn">保存</button>	
+		 	    <button type="reset" class="btn btn-default reset-btn">取消</button>	
+              </div>				
 		</form>
-     </div>
-	 <div class="model-min-box video-box">
-	        <div class="x-button video-x">×</div>
-	       <iframe id="video"></iframe>
-	 </div>
-	 <div class="footer">
-        <ul class="pagination">
-             <li><a href="#">&laquo;</a></li>
-             <li><a href="#">1</a></li>
-             <li><a href="#">2</a></li>
-             <li><a href="#">3</a></li>
-             <li><a href="#">4</a></li>
-             <li><a href="#">5</a></li>
-             <li><a href="#">&raquo;</a></li>
-       </ul>
      </div>
     </div>
   </div>

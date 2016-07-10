@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1"/>
 <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
 <link type="text/css" href="css/AdminLTE.min.css" rel="stylesheet"/>
 <link type="text/css" href="css/_all-skins.min.css" rel="stylesheet"/>
@@ -13,19 +13,16 @@
 
 </head>
 <body class="skin-blue sidebar-mini" style="padding:0;margin:0;"> 
-  <div>
-  <div class="col-xs-2">
-	     <aside class="main-sidebar">
+   <aside class="main-sidebar">
     <section class="sidebar">
       <ul class="sidebar-menu">
-        <li class="header" style="padding-left:20px;"> 录播主机Web管理</li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span> 录播主机设置</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="basicSet.html"><i class="fa fa-circle-o"></i> 基本设置</a></li>
-            <li><a href="storeSet.html"><i class="fa fa-circle-o"></i> 存储设置</a></li>
+            <li><a href="storeSet.html"><i class="fa fa-circle-o"></i> 上传设置</a></li>
 			<li><a href="recordSet.html"><i class="fa fa-circle-o"></i> 录播设置</a></li>
           </ul>
         </li>
@@ -60,18 +57,25 @@
       </ul>
      </section>
    </aside>
-  </div>
 
-  <div class="col-xs-10">
-     <div class="header logout-header">
-	      当前用户:<span>管理员</span>
-		  <button type="">退出</button>
-	 </div>
-     <div class="model-box" style="width:1000px;margin-top:30px;">
+    <div class="header">
+	    <div class="logo">
+		     <img class="logo-img"/>
+			 <p class="logo-txt"></p>
+	    </div>
+        <div class="header logout-header">	
+            <img src="img/user.png" id="custom"/>			
+	        当前用户:<span>管理员</span>
+		    <button type="default">退出登录</button>
+	    </div>
+   </div> 
+     
+  <div class="main">
+     <div class="model-box" style="width:70%;margin-top:30px;">
 	      <form>
 		      <div class="form-group">
                 <label>
-                <input type="text" class="form-control" id="search-input" />
+                <input type="text" class="form-control" id="search-input" name="search"/>
 				</label>
 				<button  class="btn btn-default btn-search">搜索</button>
               </div>		  
@@ -85,8 +89,7 @@
 				<th>简介</th>
 				<th>开始时间</th>
 				<th>录制模式</th>
-				<th>点播</th>
-				<th>编辑</th>
+				<th>下载</th>
 			  </tr>
 			  <tr>		    
 			    <td>精品示范课1</td>
@@ -94,19 +97,29 @@
 				<td>隋东亮</td>
 				<td id="intr">中学文言文教学新方法尝试...</td>
 				<td>2016-04-10 10:00:00</td>
-				<td>电影模式</td>
-				<td><a id="dem">点播</a></td>
-				<td><a href="" download="">下载</a></td>
+				<td>
+				   <a href="#">电影模式 <span class="glyphicon glyphicon-play-circle"></span></a>			   
+				</td>
+				<!--<td><a id="dem" href="videoPlay.html">点播</a></td>-->
+				<td><a id="download">下载</a></td>
+			  </tr>
+			   <tr>		    
+			    <td>精品示范课2</td>
+				<td>语文</td>
+				<td>隋东亮</td>
+				<td id="intr">中学文言文教学新方法尝试...</td>
+				<td>2016-04-10 10:00:00</td>
+				<td>
+				   <a href="#">电影模式 <span class="glyphicon glyphicon-play-circle"></span></a>	、
+                   <a href="#">资源模式 <span class="glyphicon glyphicon-play-circle"></span></a>				   
+				</td>
+				<!--<td><a id="dem" href="videoPlay.html">点播</a></td>-->
+				<td><a id="download">下载</a></td>
 			  </tr>
 		   </tbody>
 		 </table>
 	  </div>
-    </div> 
-	 <div class="model-min-box video-box">  
-           <div class="x-button video-x">×</div>     
-	       <iframe id="video"></iframe>		    
-	 </div>
-	 <div class="footer">
+	 <!-- <div class="turn-page">
         <ul class="pagination">
              <li><a href="#">&laquo;</a></li>
              <li><a href="#">1</a></li>
@@ -116,9 +129,30 @@
              <li><a href="#">5</a></li>
              <li><a href="#">&raquo;</a></li>
        </ul>
+     </div>-->
+	  <div class="footer">
+	       <p class="footer-txt"></p>
+	  </div>
+    </div> 
+	<div class="model-min-box download-box" style="width:310px;">
+	    <div class="x-button">×</div>
+	    <form> 
+		     <div class="checkbox">
+                 <label><input type="checkbox" value="">电影模式</label>
+             </div>
+             <div class="checkbox">
+                 <label><input type="checkbox" value="">资源模式</label>
+              </div>
+			    <div class="form-group" style="margin-top:20px;">
+                   <label>储存路径
+                    <input type="text" class="form-control" id="memo" >
+				   </label>
+              </div>
+			     <button type="default" class="btn btn-default dnload-btn">下载</button>	
+		 	    <button type="reset" class="btn btn-default reset-btn">取消</button>	
+                				
+		</form>
      </div>
-    </div>
-  </div>
     <div class="cover-lay"></div>
 </body>
 </html>

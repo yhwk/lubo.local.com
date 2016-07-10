@@ -1,32 +1,28 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1"/>
 <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
 <link type="text/css" href="css/AdminLTE.min.css" rel="stylesheet"/>
 <link type="text/css" href="css/_all-skins.min.css" rel="stylesheet"/>
 <link type="text/css" href="css/css.css" rel="stylesheet"/>
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.zclip.min.js"></script>
 <script type="text/javascript" src="js/record.js"></script>
 <script type="text/javascript" src="js/app.min.js"></script>
-<title>课程直播</title>
-
+<script src=""></script>
+<title>基本设置</title>
 </head>
 <body class="skin-blue sidebar-mini" style="padding:0;margin:0;"> 
-  <div>
-  <div class="col-xs-2">
-	<aside class="main-sidebar ">
-    <section class="sidebar ">
-      <ul class="sidebar-menu ">
-        <li class="header" style="padding-left:20px;"> 录播主机Web管理</li>
+	<aside class="main-sidebar">
+     <section class="sidebar">
+      <ul class="sidebar-menu">
         <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span> 录播主机设置</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
-          <ul class="treeview-menu">
+          <ul class="treeview-menu" >
             <li><a href="basicSet.html"><i class="fa fa-circle-o"></i> 基本设置</a></li>
-            <li><a href="storeSet.html"><i class="fa fa-circle-o"></i> 存储设置</a></li>
+            <li><a href="storeSet.html"><i class="fa fa-circle-o"></i> 上传设置</a></li>
 			<li><a href="recordSet.html"><i class="fa fa-circle-o"></i> 录播设置</a></li>
           </ul>
         </li>
@@ -61,42 +57,55 @@
       </ul>
      </section>
    </aside>
-  </div>
 
-  <div class="col-xs-10">
-     <div class="header logout-header">
-	      当前用户:<span>管理员</span>
-		  <button type="">退出</button>
+   <div class="header">
+	    <div class="logo">
+		     <img class="logo-img"/>
+			 <p class="logo-txt"></p>
+	    </div>
+        <div class="header logout-header" style="padding-top:15px;padding-bottom:12px;">	
+            <div>	
+                <img src="img/user.png" id="custom"/>			
+	           当前用户:<span>管理员</span>
+		       <button type="default">退出</button>
+			</div>
+			<div> 
+			   <a><span class="glyphicon glyphicon-book" style="margin:15px 5px 0 -55px;;"></span>复制页面链接</a> &nbsp;&nbsp;&nbsp;
+			    <div style="display:inline-block"> <span style="float:left;margin-right:5px;"><span class="glyphicon glyphicon-share" style="margin-right:5px;"></span>分享到 </span>
+								<a><img src="img/wx.png" style="margin-right:5px;"/></a> &nbsp;&nbsp;
+								<a><img src="img/qqkj.jpg"/></a>
+				</div>
+			</div>
+	    </div>
 	 </div>
-     <div class="model-box" style="width:900px;margin-top:50px;">
-	     <table class="courseTab">
-		   <tbody>
-		      <tr>			   
-				<th>课件名称</th>
-			    <th>主讲人</th>
-				<th>开始时间</th>
-				<th>直播地址</th>
-				<th>观看</th>
-				<th>复制链接</th>
-			  </tr>
-			  <tr>			   
-			    <td>精品示范课1</td>
-				<td>隋东亮</th>
-				<td>2016-04-10 10:00:00</td>
-				<td id="live-url">http://192.168.9.159:8080/h5s/play?stream_name=70210775</td>
-				<td><a id="dem">观看</a></td>
-				<td><a id="copy">复制链接</a></td>
-			  </tr>
-		   </tbody>
-		 </table>
+  <div class="main">
+	 <div class="row video-row">
+      <div class="col-xs-8">	 
+		<video width="100%" autoplay="autoplay" style="background:#000;">
+              <source src="" type="">
+         </video>
+		</div> 
+		<div class="col-xs-3">
+		     <div class="row video-con-row" style="font-size:18px;">
+		             <span class="glyphicon glyphicon-play-circle" style="color:#607c94"></span> 孙青测试
+			 </div>
+		     <div class="row video-con-row">
+		            <span class="glyphicon glyphicon-time" style="color:#79af8b"></span> 2016-03-26 11:33  &nbsp;&nbsp;&nbsp;
+					<span style="display:inline-block"><span class="glyphicon glyphicon-record" style="color:#79af8b"></span> 直播结束</span>
+			 </div>
+		     <div class="row video-con-row">
+		            <span class="glyphicon glyphicon-th" style="color:#699b7e"></span> 直播主题
+					<p>孙</p>
+		     </div>
+		     <div class="row video-con-row">
+			        <span class="glyphicon glyphicon-list" style="color:#7585a9"></span> 直播详情
+                    <p>清</p>					
+			 </div>
+	    </div>
 	  </div>
-    </div> 
-	 <div class="model-min-box video-box">
-	        <div class="x-button video-x">×</div>
-	       <iframe id="video"></iframe>
+	  <div class="footer">
+	       <p class="footer-txt"></p>
 	  </div>
-    </div>
-  </div>
-    <div class="cover-lay"></div>
+  </div> 
 </body>
 </html>
