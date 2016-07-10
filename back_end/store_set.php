@@ -13,9 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //    判断表中有无数据，从而进行更新或插入
     if ($st != false) {
         $sql = "UPDATE rec_server SET 
-                FTP_IP = :ftp_ip,
-                FTP_PORT = :ftp_port,
+                FTP_IP = :ftp_ip, 
                 FTP_USERNAME = :ftp_username,
+                FTP_PORT = :ftp_port,
                 FTP_PWD = :ftp_password,
                 FTP_OPEN = :ftp_open";
     } else {
