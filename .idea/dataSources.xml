@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1736631777">
+  <component name="DataSourceManagerImpl" format="xml" hash="1014978658">
     <data-source source="LOCAL" name="Sqlite (Xerial) - iactive.db" uuid="e233cb28-c448-49a4-ab61-481b4b6aa265">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/iactive.db</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="Sqlite (Xerial) - iactive.db [2]" uuid="1425d1e2-6a03-47dd-8685-c875bd30c9ba">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>

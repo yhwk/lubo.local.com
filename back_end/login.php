@@ -2,44 +2,44 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $type = $_POST['optionsRadios'];
+    $userType = $_POST['type'];
     $password = $_POST['password'];
     $db = new PDO('sqlite:../iactive.db');
 
-    $sql = "SELECT * FROM user WHERE pw = :password AND type_id = :type";
-    $query = $db->prepare($sql);
-    $query->bindParam(":password", $password, PDO::PARAM_INT);
-    $query->bindParam(":type", $type, PDO::PARAM_STR);
-    $query->execute();
-
+    $sql = "SELECT * FROM user WHERE password = :password AND userType = :userType";
+    $st = $db->prepare($sql);
+    $st->bindParam(":password", $password);
+    $st->bindParam(":userType", $userType);
+    $st->execute();
 
     try {
-        $q_result = $query->fetch();
+        $q_result = $st->fetch();
         if ($q_result == true) {
             $sv_host = $_SERVER['HTTP_HOST'];
             $res = 1;
-            if ($q_result['type_id'] == 1) {
+            if ($q_result['type_id'] == 0) {
                 header("Location: http://$sv_host/basicSet.html");
 
             } else {
                 header("Location: http://$sv_host/basicSet.html");
             }
 
-        } else {
-            $res = 3;
-            header("Location: http://$sv_host");
+        } else if ($q_result['password'] != $password) {
+            $res = 2;
+            echo "密码错误";
         }
 
     } catch (PDOException $e) {
         echo $e;
-        ($q_result['password'] == $password) ? $res = 2 : $res = 4;
         $q_result = null;
+        $res = 4;
     }
 
     header('Content-type: application/json');
-    print json_encode(array('res' => $res, 'type' => $q_result['type_id']));
+    print json_encode(array('res' => $res, 'userType' => $q_result['userType']));
 
 } else {
     $sv_host = $_SERVER['HTTP_HOST'];
-    header("Location: http://$sv_host");
+//    header("Location: http://$sv_host");
+    echo "请求的方法为get";
 }

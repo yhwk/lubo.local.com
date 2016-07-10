@@ -1,54 +1,67 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1"/>
-<link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
-<link type="text/css" href="css/css.css" rel="stylesheet"/>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/record.js"></script>
-<title>登录</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1"/>
+    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="css/css.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/record.js"></script>
+    <title>登录</title>
 </head>
 <style>
-.h1{margin-bottom:20px;}
-.radio{margin-left:52px;}
-.form-group{margin-top:30px;}
-.model-box{margin:80px 0 0 35%;width:60%}
+    .h1 {
+        margin-bottom: 20px;
+    }
+
+    .radio {
+        margin-left: 52px;
+    }
+
+    .form-group {
+        margin-top: 30px;
+    }
+
+    .model-box {
+        margin: 80px 0 0 35%;
+        width: 60%
+    }
 </style>
 <body>
-  <div class="header" >
-		<div class="logo"  style="padding-left:50px;">
-		     <img src="img/index_logo.png"/>
-			 <p>网动流媒体服务</p>
-	    </div>
-        <div class="header logout-header" style="padding-bottom:50px;">	      	       
-	    </div>
-	 </div>
- <div class="model-box">
-   <h1>
-     录播主机Web管理
-   </h1>
-   <main>
-      <div style="margin-top:30px">
-	     <form role="form" id="loginForm" name="loginForm">
-		   <div class="radio">
-                <label>
-                <input type="radio" name="type" id="type1"  value="0" checked>管理员
-				</label>
-            </div>
-			   <div class="radio">
-                <label>
-                <input type="radio" name="type" id="type2"  value="1">普通用户
-				</label>
-            </div>
-		    <div class="form-group">
-                <label for="password" >密码
-                <input type="text" class="form-control" id="password" name="password" splaceholder="请输入密码" style="margin-left:50px;">
-				</label>
-            </div>
-	        <button type="button" class="btn btn-default" style="margin-left:50px" id="login-btn">登录</button>
-		 </form>
-	  </div>
-   </main>
- </div>
+<div class="header">
+    <div class="logo" style="padding-left:50px;">
+        <img src="img/index_logo.png"/>
+        <p>网动流媒体服务</p>
+    </div>
+    <div class="header logout-header" style="padding-bottom:50px;">
+    </div>
+</div>
+<div class="model-box">
+    <h1>
+        录播主机Web管理
+    </h1>
+    <main>
+        <div style="margin-top:30px">
+            <form role="form" id="loginForm" name="loginForm" action="back_end/login.php" method="post">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="type" id="type1" value="0" checked>管理员
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="type" id="type2" value="1">普通用户
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="password">密码
+                        <input type="text" class="form-control" id="password" name="password" splaceholder="请输入密码"
+                               style="margin-left:50px;">
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-default" style="margin-left:50px" id="login-btn">登录</button>
+            </form>
+        </div>
+    </main>
+</div>
 </body>
 </html>

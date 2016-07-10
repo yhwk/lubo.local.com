@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="Sqlite (Xerial) - iactive.db" uuid="e233cb28-c448-49a4-ab61-481b4b6aa265">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
-  </data-source>
-  <data-source name="Sqlite (Xerial) - iactive.db [2]" uuid="1425d1e2-6a03-47dd-8685-c875bd30c9ba">
     <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
@@ -180,8 +177,8 @@
     </table>
     <table name="user" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
-      <column name="pw" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="type_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4" def="Mg=="/>
+      <column name="password" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="userType" sqlType="INT" precision="0" scale="-1" nullable="false" jdbcType="4" def="MQ=="/>
       <primary-key columns="id"/>
       <index name="user_id_uindex" unique="true" columns="id"/>
     </table>
