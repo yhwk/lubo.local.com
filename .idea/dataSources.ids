@@ -60,7 +60,7 @@
       <column name="IS_COMPLETE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
       <column name="MOVIE_SIZE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
       <column name="MOVIE_FLOW" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
-      <column name="GUID" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="GUID" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="IS_LOCAL_IAC_SPLIT_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
       <column name="IS_LOCAL_IAC_MOVIE_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
       <column name="IS_LOCAL_DIRECT_PLAY" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
