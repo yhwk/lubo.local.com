@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ct_ip = $_POST['centerIp'];
 
     $sql = "INSERT INTO rec_server (SERVER_NAME, MAN_PWD, IP, RES_CENTER_IP)
-                             VALUES(:sv_nm, :mng_pw, :ip, :ct_ip) ";
+                             VALUES (:sv_nm, :mng_pw, :ip, :ct_ip) ";
     $db = new PDO('sqlite:../iactive.db');
     $st = $db->prepare($sql);
     $ar = array(
