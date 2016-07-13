@@ -183,4 +183,187 @@
       <index name="user_id_uindex" unique="true" columns="id"/>
     </table>
   </data-source>
+  <data-source name="Sqlite (Xerial) - iactive.db [2]" uuid="f9100240-6701-4087-b640-322e41c56e8c">
+    <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="rec_course_plan" schema="" catalog="" type="TABLE">
+      <column name="PK_COURSE_PLAN" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="PLAN_NAME" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="START_TIME" sqlType="BIGINT(20)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="END_TIME" sqlType="BIGINT(20)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="AUTHOR" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="MEMO" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="RESOURCE_GUID" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="PK_SERVER" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="SCREEN_MODE" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_MODE" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_COURSE_TYPE" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="SCREEN_COURSE_TYPE" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_AUTO" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="VIR_DIR" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="IS_DELETE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_SPLIT" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_COMPLETE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_SIZE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_FLOW" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="GUID" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="IS_LOCAL_IAC_SPLIT_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_LOCAL_IAC_MOVIE_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_LOCAL_DIRECT_PLAY" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_SRV_DIRECT_PLAY" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_DELETED_LOCAL_COURSE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="CHANNEL_COUNT" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_UPLOAD_RES_CENTER" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="UPLOAD_STATUS" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_REUPLOAD_RES_CENTER" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="REUPLOAD_STATUS" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="STORAGE_DIR" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="RESOURCE_SIZE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="RESOURCE_CLASS_GUID" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="J05VTEwn"/>
+      <primary-key columns="pk_course_plan"/>
+    </table>
+    <table name="rec_course_plan_add" schema="" catalog="" type="TABLE">
+      <column name="PK_COURSE_PLAN" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="PLAN_NAME" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="START_TIME" sqlType="BIGINT(20)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="END_TIME" sqlType="BIGINT(20)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="AUTHOR" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="MEMO" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="RESOURCE_GUID" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="PK_SERVER" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="SCREEN_MODE" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_MODE" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_COURSE_TYPE" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="SCREEN_COURSE_TYPE" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_AUTO" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="VIR_DIR" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="IS_DELETE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_SPLIT" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_COMPLETE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_SIZE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_FLOW" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="GUID" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="IS_LOCAL_IAC_SPLIT_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_LOCAL_IAC_MOVIE_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_LOCAL_DIRECT_PLAY" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_SRV_DIRECT_PLAY" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_DELETED_LOCAL_COURSE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="CHANNEL_COUNT" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_UPLOAD_RES_CENTER" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="UPLOAD_STATUS" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_REUPLOAD_RES_CENTER" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="REUPLOAD_STATUS" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="STORAGE_DIR" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="RESOURCE_SIZE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="RESOURCE_CLASS_GUID" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="J05VTEwn"/>
+      <primary-key columns="pk_course_plan"/>
+    </table>
+    <table name="rec_dic" schema="" catalog="" type="TABLE">
+      <column name="PK_DIC" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="NID" sqlType="INT(11)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="NAME" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="DEF_VALUE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="DIC_TYPE" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="MEMO" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key columns="pk_dic"/>
+    </table>
+    <table name="rec_plan_channel" schema="" catalog="" type="TABLE">
+      <column name="PK_CHN" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="VID_SIZE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="VID_FLOW" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="CHN_NID" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="PK_COURSE_PLAN" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="PK_SERVER" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <primary-key columns="pk_chn"/>
+    </table>
+    <table name="rec_server" schema="" catalog="" type="TABLE">
+      <column name="PK_SERVER" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="SERVER_NAME" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="MAN_PWD" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="IP" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="ANONYMOUS" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="ROOT" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12" def="J05VTEwn"/>
+      <column name="DISK_SIZE" sqlType="FLOAT" precision="0" scale="-1" nullable="false" jdbcType="6" def="MA=="/>
+      <column name="SCREEN_MODE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_MODE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_COURSE_TYPE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="SCREEN_COURSE_TYPE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_SIZE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_FLOW" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="MOVIE_SPLIT" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="LOCAL_DIRECT_PORT" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="DIRECT_CID" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="SRV_DIRECT_IP" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="IS_LOCAL_DIRECT_PLAY" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IP_MULTICAST_SPLIT" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="PLAY_PWD" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="VIR_DIR" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="IS_SRV_DIRECT_PLAY" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="SRV_USERNAME" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="SRV_PWD" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="FTP_IP" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="FTP_PORT" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="FTP_USERNAME" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="FTP_PWD" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="FTP_OPEN" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="COURSE_CONTROL" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_LOCAL_IAC_SPLIT_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="CUR_COURSE_GUID" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="CUR_REC_STATUS" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="CUR_WMV_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="CUR_IAC_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_LOCAL_IAC_MOVIE_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IP_MULTICAST_MOVIE" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="CUR_REC_TIME" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="IS_COURSE_CONTROL" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="ONLINE_TIME" sqlType="BIGINT(20)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="HARDDRIVE_ID" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="LIVE_CONTROL" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="RES_CENTER_IP" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="true" jdbcType="12" def="JzAn"/>
+      <column name="TEACHER_IP" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="true" jdbcType="12" def="JzAn"/>
+      <column name="CUR_FLV_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="true" jdbcType="4" def="TlVMTA=="/>
+      <column name="FLV_LIVE_URL" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="true" jdbcType="12" def="J05VTEwn"/>
+      <column name="FLV_LIVE_TYPE" sqlType="INT(11)" precision="0" scale="-1" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="FLV_THIRD_LIVE_URL" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="IS_FLV_LIVE" sqlType="INT(10)" precision="0" scale="-1" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="IS_RECODE" sqlType="INT(10)" precision="0" scale="-1" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="RECODE_SIZE" sqlType="INT(10)" precision="0" scale="-1" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="RECODE_FLOW" sqlType="INT(10)" precision="0" scale="-1" nullable="true" jdbcType="4" def="MA=="/>
+      <column name="DIRECT_PSW" sqlType="VARCHAR(255)" precision="0" scale="-1" nullable="true" jdbcType="12" def="J05VTEwn"/>
+      <primary-key columns="pk_server"/>
+    </table>
+    <table name="rec_vid_chn_set" schema="" catalog="" type="TABLE">
+      <column name="PK_VID_CHN" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="VID_NAME" sqlType="VARCHAR(50)" precision="0" scale="-1" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="VID_TYPE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="VID_SIZE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="VID_BANDWIDTH" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="VID_CMP_MODE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="VID_QUALITY" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="ODA="/>
+      <column name="VID_FPS" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MjU="/>
+      <column name="VID_KF_INT" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="ODA="/>
+      <column name="VID_DEINTERLACE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="VID_DENOISE" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="VID_OSD" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="VID_HAVE_PAN" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="VID_PAN_INDEX" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="VID_PAN_PROTOCOL" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="VID_PAN_COM_PORT" sqlType="VARCHAR(45)" precision="0" scale="-1" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="VID_RECORD_CHN" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="VID_PREVIEW_CHN" sqlType="INT(10)" precision="0" scale="-1" nullable="false" jdbcType="4" def="MQ=="/>
+      <primary-key columns="pk_vid_chn"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="user" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="password" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="userType" sqlType="INT" precision="0" scale="-1" nullable="false" jdbcType="4" def="MQ=="/>
+      <primary-key columns="id"/>
+      <index name="user_id_uindex" unique="true" columns="id"/>
+    </table>
+  </data-source>
 </component>
