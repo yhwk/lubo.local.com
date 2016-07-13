@@ -37,7 +37,8 @@ namespace SocketServer {
         $read = array_merge($read, $clients);
 
         // 建立一个阻塞调用 ， 借用 socket_select
-        if (socket_select($read, $write = NULL, $except = NULL, $tv_sec = 5) < 1) {
+        $write = $except = NULL;
+        if (socket_select($read, $write, $except, $tv_sec = 5) < 1) {
 //                SocketServer::debug("Problem blocking socket_select?");
             continue;
         }
@@ -63,7 +64,7 @@ namespace SocketServer {
         foreach ($clients as $key => $client) { // for each client
             if (in_array($client, $read)) {
                 if (false === ($buf = socket_read($client, 2048, PHP_NORMAL_READ))) {
-                    echo "socket_read() falló: razón: " . socket_strerror(socket_last_error($client)) . "\n";
+                    echo "socket_read() 失败原因: " . socket_strerror(socket_last_error($client)) . "\n";
                     break 2;
                 }
                 if (!$buf = trim($buf)) {
