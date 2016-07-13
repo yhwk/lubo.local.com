@@ -66,13 +66,13 @@
     <div class="header logout-header">
         <img src="img/user.png" id="custom"/>
         当前用户:<span>管理员</span>
-        <button type="default">退出登录</button>
+        <button type="default" id="logout-btn">退出登录</button>
     </div>
 </div>
 
 <div class="main">
     <div class="model-box">
-        <form id="basicForm" name="basicForm" action="back_end/basic_set.php" method="post">
+        <form id="basicForm" name="basicForm" method="post" action="back_end/basic_set.php">
             <div class="form-group">
                 <label for="serverName">录播主机名
                     <input type="text" class="form-control" id="serverName" name="serverName">
@@ -108,8 +108,6 @@
         <p class="footer-txt"></p>
     </div>
 </div>
-<script>
 
-</script>
 </body>
 </html>

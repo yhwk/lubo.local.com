@@ -1,13 +1,13 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
     $userType = $_POST['type'];
     $password = $_POST['password'];
     $db = new PDO('sqlite:../iactive.db');
 
     $sql = "SELECT * FROM user WHERE password = :password AND userType = :userType";
     $st = $db->prepare($sql);
+
     $st->bindParam(":password", $password);
     $st->bindParam(":userType", $userType);
     $st->execute();

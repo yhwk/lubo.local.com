@@ -66,7 +66,7 @@
     <div class="header logout-header">
         <img src="img/user.png" id="custom"/>
         当前用户:<span>管理员</span>
-        <button type="default">退出登录</button>
+        <button type="default" id="logout-btn">退出登录</button>
     </div>
 </div>
 
@@ -78,7 +78,7 @@
             <button type="button" class="btn btn-default btn-ctr" id="sus-btn">暂停</button>
             <button type="button" class="btn btn-default btn-ctr" id="over-btn">中止</button>
             <div class="model-min-box recordset-box">
-                <form id="courseRecForm" name="courseRecForm" method="post" action="back_end/status_ctr.php">
+                <form id="courseRecForm" name="courseRecForm">
                     <div class="form-group">
                         <label>课件名称
                             <input type="text" class="form-control" id="planName" name="planName">
@@ -100,7 +100,7 @@
                         </label>
                     </div>
                     <div class="btn-box btn-box-min">
-                        <button type="submit" class="btn btn-default" id="save-btn">保存</button>
+                        <button type="button" class="btn btn-default" id="save-btn">保存</button>
                         <button type="reset" class="btn btn-default reset-btn">取消</button>
                     </div>
                 </form>
@@ -145,7 +145,7 @@
             <button type="button" class="btn btn-default btn-ctr" id="inter-btn">启用</button>
             <div class="model-min-box inter-box">
                 <form name="interForm">
-                    <div class="inter-in1" style="border-right:solid thin #ddd;width:300px;float:left;">
+                    <div class="inter-in1" style="border-right:solid thin #ddd;width:300px">
                         <div class="form-group">
                             <label>MCU地址
                                 <input type="text" class="form-control" id="ipMcu" name="ipMcu">
@@ -161,10 +161,39 @@
                                 <input type="text" class="form-control" id="mcuPassword" name="mcuPassword">
                             </label>
                         </div>
+                        <button type="button" class="btn btn-default log-button" id="inter-log">登录</button>
                     </div>
-                    <button type="button" class="btn btn-default log-button" id="inter-log">登录</button>
                 </form>
             </div>
+            <div class="model-min-box inter-met">
+                <div class="x-button" style="margin-left:195px;margin-top:-32px;">×</div>
+                会议选择
+                <div class="radio met-radio">
+                    <label>
+                        <input type="radio" name="metChs" value="0" checked> 会议ID 20 <span> 精品课堂1</span>
+                    </label>
+                </div>
+                <div class="radio met-radio">
+                    <label>
+                        <input type="radio" name="metChs" value="1" checked> 会议ID 21 <span> 精品课堂2</span>
+                    </label>
+                </div>
+                <div class="radio met-radio">
+                    <label>
+                        <input type="radio" name="metChs" value="2" checked> 会议ID 22 <span> 精品课堂2</span>
+                    </label>
+                </div>
+                <div class="radio met-radio">
+                    <label>
+                        <input type="radio" name="metChs" value="3" checked> 会议ID 23 <span> 精品课堂2</span>
+                    </label>
+                </div>
+                <div class="btn-box btn-box-min" style="margin-left:-10px;margin-top:20px;">
+                    <button type="button" class="btn btn-default" id="met-det-btn">确定</button>
+                    <button type="reset" class="btn btn-default reset-btn">取消</button>
+                </div>
+            </div>
+
             <div class="model-min-box inter-obj">
                 <table class="inter-tab">
                     <tr>
@@ -195,7 +224,6 @@
         <p class="footer-txt"></p>
     </div>
 </div>
-
 </div>
 </body>
 </html>

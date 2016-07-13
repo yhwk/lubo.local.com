@@ -19,9 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $iacMovie = $iac_mv_flag ? 0 : $_POST['iacMovie'];
     $ipMovie = $iac_mv_flag ? '' : $_POST['ipMovie'];
 
-    $flv_flag = empty($_POST['flvNative']);
-    $flvNative = $flv_flag ? 0 : $_POST['flvNative'];
-    $flvThird = $flv_flag ? 1 : 0;
+    $flv_flag = empty($_POST['flvType']);
+    $flvType = $flv_flag ? 0 : 1;
     $flvUrl = empty($flvThird) ? '' : $_POST['flvUrl'];
 
     $isRecode = $_POST['isRecode'];
@@ -60,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ar = array(
         'sr_md' => $screenMode, 'sr_cr' => $screenCourse, 'mv_md' => $movieMode, 'mv_cr' => $movieCourse,
         'mv_sz' => $movieSize, 'mv_fl' => $movieFlow, 'iac_sp' => $iacSplit, 'iac_mv' => $iacMovie,
-        'ip_sp' => $ipSplit, 'ip_mv' => $ipMovie, 'flv_type' => $flvNative, 'flv_url' => $flvUrl,
+        'ip_sp' => $ipSplit, 'ip_mv' => $ipMovie, 'flv_type' => $flvType, 'flv_url' => $flvUrl,
         'is_rcd' => $isRecode, 'rcd_sz' => $recodeSize, 'rcd_fl' => $recodeFlow
     );
     $st->execute($ar);

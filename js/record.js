@@ -34,29 +34,24 @@ $(document).ready(function () {
             $(".change,input[type=text]").css({"color": "#000"});
         }
     });
-    $("#edit").click(function () {
-        $(".edit-box").css("display", "block");
-        $(".cover-lay").css("display", "block");
+    $(".edit").click(function () {
+        $(".edit-box").show();
+        $(".cover-lay").show();
 
     })
-    $("#download").click(function () {
-        $(".download-box").css("display", "block");
-        $(".cover-lay").css("display", "block");
+    $(".download").click(function () {
+        $(".download-box").show();
+        $(".cover-lay").show();
 
     })
 
     $(".x-button").click(function () {
-        $(".edit-box").css("display", "none");
-        $(".video-box").css("display", "none");
-        $(".download-box").css("display", "none");
-        $(".cover-lay").css("display", "none");
-
-    })
-    $("#dem").click(function () {
-        var url = "http://player.youku.com/embed/XMTU0OTc0MzIwMA;"
-        $("#video").attr("src", url);
-        $(".video-box").css("display", "block");
-        $(".cover-lay").css("display", "block");
+        $(".edit-box").hide();
+        $(".video-box").hide();
+        $(".download-box").hide();
+        $(".cover-lay").hide();
+        $(".cover-lay2").remove();
+        $(".inter-met").hide();
     })
 
     $("#save-btn").click(function () {
@@ -78,10 +73,15 @@ $(document).ready(function () {
     })
 
     $("#inter-log").click(function () {
+        $("body").append("<div class='cover-lay2'></div>");
+        $(".inter-met").show();
+    })
+    $("#met-det-btn").click(function () {
+        $(".cover-lay2").remove();
+        $(".inter-met").hide();
         $(".inter-box").hide();
         $(".inter-obj").show();
     })
-
 
     $(window).load(function () {
         var store = 530 * 0.3;
@@ -90,11 +90,20 @@ $(document).ready(function () {
 
         var h = $(".footer").position().top;
         if (h < 350) {
-            $(".footer").css("margin-top", 250);
+            $(".footer").css("margin-top", h - 50);
         }
 
         banner = new Banner();
         bannerCtrl(banner);
+
+        var ut = getCookie("type");
+        if (ut == 0) {
+            $(".logout-header").find("span").first().html("管理员")
+        }
+        else if (ut == 1) {
+            $(".logout-header").find("span").first().html("普通用户")
+        }
+
     })
 
     function Banner() {
@@ -139,6 +148,7 @@ $(document).ready(function () {
         $(".channel-tab td").mousedown(function (e) {
             if (e.which == 3) {
                 var mark = $(this);
+                var txt = mark.text();
                 $(this).append("<ul id='channel-list'><li>教师跟踪</li><li>教师桌面</li><li>黑板特写</li><li>学生全景</li><li>学生跟踪</li><li style='border-bottom:solid thin #ddd;padding-bottom:5px'>学生跟踪</li> <li>撤销显示<li></ul>");
                 var xx = e.pageX - $(this).offset().left;
                 var yy = e.pageY - $(this).offset().top;
@@ -152,7 +162,16 @@ $(document).ready(function () {
                         mark.text("");
                     }
                     else {
-                        mark.text(channel);
+                        $(".channel-tab td").each(function () {
+                            if (channel != $(this).text()) {
+                                mark.text(channel);
+                            }
+                            else {
+                                $(this).text(txt)
+                                mark.text(channel)
+
+                            }
+                        })
                     }
                 })
             }
@@ -160,9 +179,9 @@ $(document).ready(function () {
     }
 
     /*$("#copy").zclip({
-     path:'js/ZeroClipboard.swf',
+     path:'js/ZeroClipboard.swf', 
      copy:function(){
-     return $("#live-url").text();
+     return $("#live-url").text();	 
      }
      });*/
 
@@ -183,8 +202,44 @@ $(document).ready(function () {
     })
 
 
+    function writeCookie(name, value) {
+        document.cookie = name + "=" + escape(value);
+    }
+
+    function getCookie(cookie_name) {
+        var allcookies = document.cookie;
+        var cookie_pos = allcookies.indexOf(cookie_name);
+        if (cookie_pos != -1) {
+            cookie_pos += cookie_name.length + 1;
+            var cookie_end = allcookies.indexOf(";", cookie_pos);
+            if (cookie_end == -1) {
+                cookie_end = allcookies.length;
+            }
+            var value = unescape(allcookies.substring(cookie_pos, cookie_end));
+        }
+        return value;
+    }
+
+    $("#all-check").click(function () {
+        if ($(this).prop('checked') == true) {
+            $("input[type='checkbox']").attr("checked", true);
+        }
+        else {
+            $("input[type='checkbox']").attr("checked", false);
+        }
+    })
+    function delCookie(name) {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval = getCookie(name);
+        if (cval != null)
+            document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+    }
+
+
     //接口部分
     var Rurl = "http://localhost:8888";
+    // var Hurl=""
     var Rheader = "";
 
     var DataDeal = {
@@ -197,30 +252,156 @@ $(document).ready(function () {
         }
     }
 
-    function formPost(obj) {
+    function formPost(obj, Hurl) {
         var list = $(obj).parent("form").serialize();
         list = decodeURIComponent(list, true);
         var Rjson = DataDeal.formToJson(list);
-        console.log(Rjson);
         $.ajax({
             type: "POST",
-            url: Rurl,
+            url: Hurl,
             data: Rjson,
             dataType: "json",
-            processData: false,
             success: function (data) {
-                console.log(data);
-            },
-            error: function () {
-                console.log("233");
             }
-
         })
+
     }
 
     //
     $("#login-btn").click(function () {
-        formPost(this);
+        var Hurl = "/back_end/login.php";
+        formPost(this, Hurl);
+        var pwd = $("#password").val();
+        var type = $("input[type='radio']:checked").val();
+        writeCookie("type", type);
+        writeCookie("login", "0");
+        var mnm = getCookie("type");
+        $.post(Rurl, {
+            "method": "27",
+            "type": "1",
+            "sub_type": "0",
+            "my_id": "",
+            "password": pwd
+        }, function (data, status) {
+            if (status == "sucess") {
+                // if(){
+                $.post(Rurl, {"method": "71", "my_id": ""}, function () {
+                })
+
+                //}
+            }
+
+        })
+        window.location.href = "basicSet.html"
+
     })
+    //
+    $("#logout-btn").click(function () {
+        $.post(Rurl, {"method": "32", "my_id": ""});
+        window.location.href = "login.html";
+        delCookie("login");
+        delCookie("type");
+    })
+
+
+    //心跳	
+    $(window).load(function () {
+        if (getCookie("login") == 0) {
+            var heartBeat = setInterval(function () {
+                $.ajax({
+                    type: "POST",
+                    url: Rurl,
+                    data: {"method": "1", "my_id": ""},
+                    dataType: "json", //jsonp
+                    // crossDomain: true, 
+                    processData: false,
+                    //beforeSend: function(request) {request.setRequestHeader("Access-Control-Allow-Origin");}					
+                })
+            }, 2000)
+        }
+    })
+
+
+    var cmdId;
+    var cmdData;
+    var cmd = {
+        "method": "72",
+        "my_id": "",
+        "cmd_id": cmdId,
+        "cmd_data": cmdData
+    }
+    //录播开关	
+    $("#record-btn").click(function () {
+
+        cmd.cmdId = "92";
+        cmd.cmdData = {"is_start": "0"};
+        var json_cmd = JSON.stringify(cmd);
+        $.post(Rurl, json_cmd);
+    })
+
+    $("#over-btn").click(function () {
+        cmd.cmdId = "92";
+        cmd.cmdData = {"is_start": "1"};
+        var json_cmd = JSON.stringify(cmd);
+        $.post(Rurl, json_cmd);
+    })
+    //直播开关
+    $("#live-btn").click(function () {
+        cmd.cmdId = "94";
+        cmd.cmdData = {"is_start": "0"};
+        var json_cmd = JSON.stringify(cmd);
+        $.post(Rurl, json_cmd);
+    })
+    $("#live-btn-cl").click(function () {
+        cmd.cmdId = "94";
+        cmd.cmdData = {"is_start": "1"};
+        var json_cmd = JSON.stringify(cmd);
+        $.post(Rurl, json_cmd);
+    })
+    //跟踪开关
+    $("#track-btn").click(function () {
+        cmd.cmdId = "96";
+        cmd.cmdData = {"is_start": "0"};
+        var json_cmd = JSON.stringify(cmd);
+        $.post(Rurl, json_cmd);
+    })
+    $("#track-btn-cl").click(function () {
+        cmd.cmdId = "96";
+        cmd.cmdData = {"is_start": "1"};
+        var json_cmd = JSON.stringify(cmd);
+        $.post(Rurl, json_cmd);
+    })
+    //导播开关
+
+
+    //录制
+    $("#save-btn").click(function () {
+        var Hurl = "/back_end/status_ctr.php";
+        formPost(this, Hurl);
+    })
+
+    $("#inter-log").click(function () {
+        var url = "/back_end/status_ctr.php";
+        formPost(this, Hurl);
+    })
+    //编辑
+    $("#edit").click(function () {
+        var url = "/back_end/course_man.php";
+        formPost(this, Hurl);
+    })
+    //删除
+    $("#delet-btn").click(function () {
+        var Hurl = "/back_end/course_man.php";
+        var data = [];
+        $("input[type='checkbox']").each(function () {
+            if ($(this).prop('checked') == true) {
+                data.push($(this).parent("td").next("td").text());
+            }
+
+        })
+        $.post(Hurl, {"del": data}, function () {
+        })
+    })
+
 
 })

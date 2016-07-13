@@ -12,5 +12,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     print json_encode($result);
 
 } else {
-    print json_encode(array('error' => '请使用get请求'));
+    print json_encode(array('error' => '请使用post请求'));
 }

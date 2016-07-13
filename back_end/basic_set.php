@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $dem_pw = $_POST['demPassword'];
     $ip = $_POST['ip'];
     $ct_ip = $_POST['centerIp'];
-
+    
     $sql = "INSERT INTO rec_server (SERVER_NAME, MAN_PWD, IP, RES_CENTER_IP)
                              VALUES (:sv_nm, :mng_pw, :ip, :ct_ip) ";
     $db = new PDO('sqlite:../iactive.db');
@@ -25,5 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     print json_encode($all);
 
 } else {
-    echo "method is post";
+    echo "method is post, server not allow";
+    print json_encode(array('error' => '405'));
 }

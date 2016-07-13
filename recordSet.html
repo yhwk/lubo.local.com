@@ -10,7 +10,6 @@
     <script type="text/javascript" src="js/app.min.js"></script>
     <script type="text/javascript" src="js/record.js"></script>
     <title>录播设置</title>
-    <style></style>
 </head>
 <body class="skin-blue sidebar-mini" style="padding:0;margin:0;min-width:990px">
 <aside class="main-sidebar">
@@ -66,24 +65,26 @@
     <div class="header logout-header">
         <img src="img/user.png" id="custom"/>
         当前用户:<span>管理员</span>
-        <button type="default">退出登录</button>
+        <button type="default" id="logout-btn">退出登录</button>
     </div>
 </div>
 
 <div class="main">
     <table class="record-tab">
-        <form id="recordSetForm" name="recordSetForm" action="back_end/record_set.php" method="post">
-            <tr>
-                <th><p>-录制-</p></th>
-                <th><p>-直播-</p></th>
-            </tr>
+        <tr>
+            <th><p>-录制-</p></th>
+            <th><p>-直播-</p></th>
+        </tr>
+        <form id="recordSetForm" name="recordSetForm" method="post" action="/back_end/record_set.php">
             <tr>
                 <td class="recordSet-td1">
+
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" id="screenMode" name="screenMode" value="1">资源模式
                         </label>
                     </div>
+
                     <label>录像格式
                         <select class="form-control" id="screenCourse" name="screenCourse">
                             <option value="1">1</option>
@@ -161,6 +162,7 @@
                             <input type="text" class="form-control" id="ipSplit" name="ipSplit">
                         </label>
                     </div>
+
                     <div class="form-group inline-group">
                         <div class="checkbox">
                             <label>
@@ -173,15 +175,15 @@
                     </div>
 
                     <h4>- FLV直播 -——</h4>
-                    <div class="checkbox">
+                    <div class="radio" style="margin-left:0px;">
                         <label>
-                            <input type="checkbox" id="flvNative" name="flvNative" value="1">本机直播
+                            <input type="radio" class="flvType" checked="" name="flvType" value="0">本机直播
                         </label>
                     </div>
                     <div class="form-group inline-group">
-                        <div class="checkbox">
+                        <div class="radio" style="margin:20px 20px 0 0">
                             <label>
-                                <input type="checkbox" id="flvThird" name="flvThird" value="1">第三方直播
+                                <input type="radio" class="flvType" name="flvType" value="1">第三方直播
                             </label>
                         </div>
                         <label>推流地址
@@ -226,6 +228,7 @@
                 </td>
             </tr>
         </form>
+
     </table>
     <div class="footer" style="margin-top:30px;">
         <p class="footer-txt"></p>
